@@ -1,6 +1,6 @@
 import React from "react";
 import { useMemo } from "react";
-import { styled } from "@storybook/theming";
+import { styled } from "storybook/theming";
 import { useTokenSearch } from "../hooks/useTokenSearch";
 import { useTokenTabs } from "../hooks/useTokenTabs";
 import { Category } from "../types/category.types";
@@ -29,7 +29,7 @@ const Container = styled.div(({}) => ({
   margin: "25px 0 40px",
 
   "*": {
-    boxSizing: "border-box",
+    boxSizing: "border-box" as const,
   },
 }));
 
