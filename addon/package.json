@@ -1,6 +1,6 @@
 {
   "name": "sb-design-token",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "Storybook addon to display design token documentation generated from your stylesheets and icon files.",
   "keywords": [
     "design token",
