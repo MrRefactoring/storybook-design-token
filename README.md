@@ -1,8 +1,6 @@
-⚠️ **This is the documentation for v3 which supports Storybook v7 and newer. Please check the v2 branch for the release supporting Storybook v6 and below.** ⚠️
+⚠️ **This is the documentation for v4 which supports Storybook v9 and newer. Please check the v3 branch for the release supporting Storybook v7 and v8.** ⚠️
 
 # Storybook Design Token Addon
-
-[![Netlify Status](https://api.netlify.com/api/v1/badges/de6a7567-7e09-4753-a3b9-5a058dc8f03f/deploy-status)](https://app.netlify.com/sites/storybook-design-token-v1/deploys)
 
 Display design token documentation generated from your stylesheets and icon files. Preview design token changes in the browser. Add your design tokens to your Storybook Docs pages using the custom Doc Blocks.
 
@@ -33,16 +31,18 @@ Display design token documentation generated from your stylesheets and icon file
 First, install the addon.
 
 ```sh
-$ yarn add --dev storybook-design-token
+$ yarn add --dev sb-design-token
 # or
-$ npm add --save-dev storybook-design-token
+$ npm add --save-dev sb-design-token
+# or
+$ pnpm add --save-dev sb-design-token
 ```
 
 Add the addon to your storybook addon list inside `.storybook/main.js`:
 
 ```javascript
 module.exports = {
-  addons: ['storybook-design-token']
+  addons: ['sb-design-token']
 };
 ```
 
@@ -232,7 +232,7 @@ module.exports = {
     // stories
   ],
   addons: [
-    { name: 'storybook-design-token', options: { preserveCSSVars: true } }
+    { name: 'sb-design-token', options: { preserveCSSVars: true } }
   ]
   // other options
 };
@@ -245,7 +245,7 @@ This addon comes with a custom Storybook Doc Block allowing you to display your 
 ```tsx
 // colors.stories.mdx
 
-import { DesignTokenDocBlock } from 'storybook-design-token';
+import { DesignTokenDocBlock } from 'sb-design-token';
 
 <DesignTokenDocBlock categoryName="Colors" maxHeight={600} viewType="card" />;
 ```
@@ -277,7 +277,7 @@ export function CircleColorPresenter({ token }) {
 ```
 
 ```tsx
-import { DesignTokenDocBlock } from 'storybook-design-token';
+import { DesignTokenDocBlock } from 'sb-design-token';
 import { CircleColorPresenter } from './CircleColorPresenter';
 
 <DesignTokenDocBlock
@@ -294,7 +294,7 @@ The `filterNames` prop allows you to filter the design tokens displayed in the `
 ```tsx
 // colors.stories.mdx
 
-import { DesignTokenDocBlock } from 'storybook-design-token';
+import { DesignTokenDocBlock } from 'sb-design-token';
 
 <DesignTokenDocBlock
   filterNames={['--b100']}

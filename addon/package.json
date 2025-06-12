@@ -10,9 +10,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/UX-and-I/storybook-design-token"
+    "url": "https://github.com/MrRefactoring/storybook-design-token"
   },
   "author": "Philipp Siekmann <philippsiekmann@me.com>",
+  "contributors": [
+    "Vladislav Tupikin <vladislav.tupikin@icloud.com>"
+  ],
   "license": "MIT",
   "exports": {
     ".": {
