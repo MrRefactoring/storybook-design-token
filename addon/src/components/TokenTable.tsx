@@ -1,6 +1,6 @@
 import React from "react";
 import { transparentize } from "polished";
-import { useCallback, useLayoutEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { useVirtualizer } from "@tanstack/react-virtual";
 import { CopyIcon, InfoIcon } from "@storybook/icons";
 import {
@@ -222,6 +222,14 @@ export const TokenTable = ({
 
     return () => resizeObserver.disconnect();
   }, []);
+
+  // Force virtualizer to recalculate after mount - fixes Firefox rendering issue
+  useEffect(() => {
+    const frame = requestAnimationFrame(() => {
+      rowVirtualizer.measure();
+    });
+    return () => cancelAnimationFrame(frame);
+  }, [tokens]);
 
   return (
     <ScrollContainer ref={parentRef}>

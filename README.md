@@ -1,4 +1,4 @@
-⚠️ **This is the documentation for v4 which supports Storybook v9 and newer. Please check the v3 branch for the release supporting Storybook v7 and v8.** ⚠️
+⚠️ **This is the documentation for v5 which supports Storybook v10 and newer (ESM-only). Please check the v4 branch for Storybook v9, or the v3 branch for Storybook v7 and v8.** ⚠️
 
 # Storybook Design Token Addon
 
@@ -41,7 +41,7 @@ $ npm add --save-dev storybook-design-token
 Add the addon to your storybook addon list inside `.storybook/main.js`:
 
 ```javascript
-module.exports = {
+export default {
   addons: ['storybook-design-token']
 };
 ```
@@ -313,7 +313,3 @@ This is especially helpful for design teams who want to trace Figma tokens to co
 
 - All modern browsers
 - ~~Internet Explorer 11~~
-
-```
-
-```

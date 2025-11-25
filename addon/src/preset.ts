@@ -1,3 +1,4 @@
+import { fileURLToPath } from "node:url";
 import {
   StorybookDesignTokenPlugin,
   viteStorybookDesignTokenPlugin,
@@ -9,7 +10,11 @@ type AddonOptions = {
 };
 
 export function managerEntries(entry: any[] = []) {
-  return [...entry, require.resolve("./manager")];
+  return [...entry, fileURLToPath(import.meta.resolve("./manager"))];
+}
+
+export function previewAnnotations(entry: any[] = []) {
+  return [...entry, fileURLToPath(import.meta.resolve("./preview"))];
 }
 
 export const viteFinal = async (
