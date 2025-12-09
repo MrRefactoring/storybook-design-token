@@ -14,6 +14,7 @@ node_modules/
 .pnp.js
 
 .cache/
+.yarn/install-state.gz
 build/
 dist/
 storybook-static/
