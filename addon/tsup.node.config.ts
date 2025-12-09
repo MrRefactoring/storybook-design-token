@@ -2,9 +2,9 @@ import { defineConfig } from "tsup";
 
 export default defineConfig((options) => ({
   entry: ["src/preset.ts"],
-  splitting: false,
+  splitting: true,
   minify: !options.watch,
-  format: ["cjs", "esm"],
+  format: ["esm"],
   dts: {
     resolve: true,
   },
@@ -12,6 +12,7 @@ export default defineConfig((options) => ({
   sourcemap: true,
   clean: false,
   platform: "node",
+  target: "node20.19",
   esbuildOptions(options) {
     options.conditions = ["module"];
   },

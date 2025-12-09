@@ -7,9 +7,9 @@ export default defineConfig((options) => ({
     "src/manager.ts",
     "src/doc-blocks.ts",
   ],
-  splitting: false,
+  splitting: true,
   minify: !options.watch,
-  format: ["cjs", "esm"],
+  format: ["esm"],
   dts: {
     resolve: true,
   },
@@ -17,6 +17,7 @@ export default defineConfig((options) => ({
   sourcemap: true,
   clean: true,
   platform: "browser",
+  external: ["react", "react-dom", "@storybook/icons"],
   esbuildOptions(options) {
     options.conditions = ["module"];
   },
